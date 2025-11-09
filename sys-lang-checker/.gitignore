@@ -1,0 +1,17 @@
+dist-newstyle/
+dist/
+*.o
+*.hi
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.HTF/
+.ghc.environment.*
+cabal.project.local*
+.ghcup/
+.cabal/
+*.swp
+*~
+.DS_Store

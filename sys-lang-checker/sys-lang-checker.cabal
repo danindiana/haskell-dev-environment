@@ -1,0 +1,63 @@
+cabal-version:      2.4
+name:               sys-lang-checker
+version:            1.0.0
+synopsis:           System programming language config/build environment validator
+description:
+  A Haskell-based type checker and validator for system programming language
+  configurations and build environments. Validates stability constraints,
+  compiler compatibility, dependency specifications, and OS requirements.
+
+license:            MIT
+author:             Haskell Developer
+maintainer:         dev@example.com
+category:           Development
+build-type:         Simple
+
+library
+  exposed-modules:
+      Types
+    , Validator
+    , Logger
+  build-depends:
+      base >=4.16 && <5
+    , text >=1.2 && <2.2
+    , containers >=0.6 && <0.7
+  hs-source-dirs:   src
+  default-language: Haskell2010
+  ghc-options:
+    -Wall
+    -Wcompat
+    -Wincomplete-record-updates
+    -Wincomplete-uni-patterns
+    -Wredundant-constraints
+    -O2
+    -threaded
+
+executable sys-lang-checker
+  main-is:          Main.hs
+  build-depends:
+      base >=4.16 && <5
+    , text >=1.2 && <2.2
+    , sys-lang-checker
+  hs-source-dirs:   app
+  default-language: Haskell2010
+  ghc-options:
+    -Wall
+    -Wcompat
+    -O2
+    -threaded
+
+test-suite tests
+  type:             exitcode-stdio-1.0
+  main-is:          Main.hs
+  build-depends:
+      base >=4.16 && <5
+    , text >=1.2 && <2.2
+    , sys-lang-checker
+  hs-source-dirs:   test
+  default-language: Haskell2010
+  ghc-options:
+    -Wall
+    -Wcompat
+    -O2
+    -threaded

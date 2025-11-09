@@ -1,0 +1,40 @@
+-- Multi-GHC Cabal Project Configuration
+-- Optimized for GHC 9.6.7 (recommended) + 9.12.2 (latest)
+
+-- Package locations
+packages: ./*.cabal
+
+-- Compiler options
+--
+-- Recommended warnings for clean code
+package *
+  ghc-options:
+    -Wall
+    -Wcompat
+    -Widentities
+    -Wincomplete-record-updates
+    -Wincomplete-uni-patterns
+    -Wmissing-export-lists
+    -Wmissing-home-modules
+    -Wpartial-fields
+    -Wredundant-constraints
+
+-- Performance optimizations
+optimization: 2
+
+-- Use newer index state for latest packages
+index-state: 2024-11-09T00:00:00Z
+
+-- Concurrent builds (adjust based on your CPU)
+jobs: $ncpus
+
+-- Test options
+tests: True
+benchmarks: False
+
+-- Documentation
+documentation: False
+-- Set to True when needed:
+-- documentation: True
+-- haddock-html: True
+-- haddock-hyperlink-source: True
